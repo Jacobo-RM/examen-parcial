@@ -1,3 +1,5 @@
+package es.cic.ejercicio4examen.demo;
+
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -47,7 +49,7 @@ class PeliculasControllerTest {
     @Test
     void testGetPeliculas() throws Exception {
         Director director = new Director(1, "Losada", "España", "10-05-1980");
-        Pelicula pelicula = new Pelicula(1, "Iron Man", 1, "2008-05-02", 4);
+        Pelicula pelicula = new Pelicula(1, "Iron Man", director, "2008-05-02", 4);
 
         when(peliculasService.getPeliculas()).thenReturn(Arrays.asList(pelicula));
         

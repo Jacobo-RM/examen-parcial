@@ -28,4 +28,18 @@ public class PeliculasController {
         return peliculasService.getPeliculaById(id);
     }
 
+    @GetMapping("/directores")
+    public List<Director> getAllDirectores(){
+        return peliculasService.getDirectores();
+    }
+
+    @GetMapping("/peliculasOrdenadas")
+    public List<Pelicula> getPeliculasOrdenAlfabetico() {
+        return peliculasService.getPeliculasOrdenAlfabetico();
+    }
+
+    @GetMapping("/peliculasPorDirector/{id}")
+    public List<Pelicula> getPeliculasByDirector(@PathVariable("id") int id){
+        return peliculasService.getPeliculasByDirector(id);
+    }
 }
